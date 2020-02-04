@@ -40,8 +40,8 @@ namespace Receive
                                  autoAck: false,
                                  consumer: consumer);
 
-            Console.WriteLine(" Press [enter] to exit.");
-            Console.ReadLine();
+            // Console.WriteLine(" Press [enter] to exit.");
+            // Console.ReadLine();
         }
     }
 }

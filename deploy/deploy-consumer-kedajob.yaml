@@ -1,0 +1,30 @@
+apiVersion: keda.k8s.io/v1alpha1
+kind: ScaledObject
+metadata:
+  name: rabbitmq-consumer
+  namespace: default
+  labels:
+    deploymentName: rabbitmq-consumer
+spec:
+  scaleType: job
+  pollingInterval: 5   # Optional. Default: 30 seconds
+  cooldownPeriod: 30   # Optional. Default: 300 seconds
+  maxReplicaCount: 30  # Optional. Default: 100
+  jobTargetRef:
+    parallelism: 10
+    activeDeadlineSeconds: 3600
+    template:
+      spec:
+        containers:
+        - name: rabbitmq-consumer
+          image: venkateshsrini3/receivejob
+          imagePullPolicy: Always
+          args:
+          - 'amqp://user:PASSWORD@rabbitmq.default.svc.cluster.local:5672'
+        restartPolicy: Never  
+  triggers:
+  - type: rabbitmq
+    metadata:
+      queueName: hello
+      host: 'amqp://user:PASSWORD@rabbitmq.default.svc.cluster.local:5672'
+      queueLength  : '5'

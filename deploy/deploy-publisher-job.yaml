@@ -7,7 +7,7 @@ spec:
     spec:
       containers:
       - name: rabbitmq-client
-        image: ggplayground.azurecr.io/rabbitmq-send:dev
+        image: venkateshsrini3/sendjob
         imagePullPolicy: Always
         args:
           - 'amqp://user:PASSWORD@rabbitmq.default.svc.cluster.local:5672'
