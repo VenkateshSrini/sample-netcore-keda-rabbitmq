@@ -19,9 +19,9 @@ spec:
   pollingInterval: 5   # Optional. Default: 30 seconds
   cooldownPeriod: 30   # Optional. Default: 300 seconds
   maxReplicaCount: 30  # Optional. Default: 100
-  completions: 1
   jobTargetRef:
-    parallelism: 1
+    # parallelism: 1
+    # completions: 1
     activeDeadlineSeconds: 3600
     template:
       spec:
