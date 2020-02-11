@@ -34,6 +34,7 @@ namespace Receive
                 Thread.Sleep(1000);
 
                 channel.BasicAck(deliveryTag: ea.DeliveryTag, multiple: false);
+                Environment.Exit(0);
             };
 
             channel.BasicConsume(queue: "hello",
