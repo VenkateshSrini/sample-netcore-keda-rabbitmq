@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Send", "Send\Send.csproj", "{8A917776-302D-45E3-B7AE-089F06A48C80}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Receive", "Receive\Receive.csproj", "{1F32EB98-8981-4C36-AEF0-55C945654736}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0AB3DD62-2341-4267-8690-2154458A7B51}"
+	ProjectSection(SolutionItems) = preProject
+		receive.Dockerfile = receive.Dockerfile
+		send.Dockerfile = send.Dockerfile
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "deploy", "deploy", "{AAA81A55-4383-4D7D-BF60-4C723A5403CB}"
+	ProjectSection(SolutionItems) = preProject
+		deploy\deploy-consumer-kedajob.yaml = deploy\deploy-consumer-kedajob.yaml
+		deploy\deploy-consumer.yaml = deploy\deploy-consumer.yaml
+		deploy\deploy-publisher-job.yaml = deploy\deploy-publisher-job.yaml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8A917776-302D-45E3-B7AE-089F06A48C80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A917776-302D-45E3-B7AE-089F06A48C80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A917776-302D-45E3-B7AE-089F06A48C80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A917776-302D-45E3-B7AE-089F06A48C80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F32EB98-8981-4C36-AEF0-55C945654736}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F32EB98-8981-4C36-AEF0-55C945654736}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F32EB98-8981-4C36-AEF0-55C945654736}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F32EB98-8981-4C36-AEF0-55C945654736}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AAA81A55-4383-4D7D-BF60-4C723A5403CB} = {0AB3DD62-2341-4267-8690-2154458A7B51}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0607FD86-5864-4F93-B6E9-7628915DD09B}
+	EndGlobalSection
+EndGlobal
