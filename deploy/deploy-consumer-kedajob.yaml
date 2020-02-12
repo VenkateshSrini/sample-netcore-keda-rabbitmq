@@ -22,6 +22,7 @@ spec:
   jobTargetRef:
     # parallelism: 1
     # completions: 1
+    ttlSecondsAfterFinished: 300
     activeDeadlineSeconds: 3600
     template:
       spec:
