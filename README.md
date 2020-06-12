@@ -32,11 +32,11 @@ helm install --name rabbitmq --set rabbitmq.username=user,rabbitmq.password=PASS
 ```cli
 
 helm repo add bitnami https://charts.bitnami.com/bitnami
-helm install bitnami/rabbitmq
+helm install rabbitmq --set rabbitmq.username=user,rabbitmq.password=PASSWORD bitnami/rabbitmq
 ```
 ``` on AKS
 helm repo add azure-marketplace https://marketplace.azurecr.io/helm/v1/repo
-helm install azure-marketplace/rabbitmq
+helm install rabbitmq --set rabbitmq.username=user,rabbitmq.password=PASSWORD azure-marketplace/rabbitmq
 ```
 
 ⚠️ Be sure to wait until the deployment has completed before continuing.  
