@@ -27,6 +27,17 @@ cd sample-netcore-keda-rabbitmq
 ```cli
 helm install --name rabbitmq --set rabbitmq.username=user,rabbitmq.password=PASSWORD stable/rabbitmq
 ```
+#### Install RabbitMQ via Helm3 (https://bitnami.com/stack/rabbitmq/helm)
+
+```cli
+
+helm repo add bitnami https://charts.bitnami.com/bitnami
+helm install bitnami/rabbitmq
+```
+``` on AKS
+helm repo add azure-marketplace https://marketplace.azurecr.io/helm/v1/repo
+helm install azure-marketplace/rabbitmq
+```
 
 ⚠️ Be sure to wait until the deployment has completed before continuing.  
 
