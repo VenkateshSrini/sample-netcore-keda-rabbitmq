@@ -29,14 +29,26 @@ helm install --name rabbitmq --set rabbitmq.username=user,rabbitmq.password=PASS
 ```
 #### Install RabbitMQ via Helm3 (https://bitnami.com/stack/rabbitmq/helm)
 
+abbitMQ Helm Chart version 7.0.0 or later
 ```cli
-
-helm repo add bitnami https://charts.bitnami.com/bitnami
-helm install rabbitmq --set rabbitmq.username=user,rabbitmq.password=PASSWORD bitnami/rabbitmq
+helm install rabbitmq --set auth.username=user --set auth.password=PASSWORD bitnami/rabbitmq
 ```
+
+NOTE: With RabbitMQ Helm Chart version 6.x.x or earlier, username and password should be specified with rabbitmq.username and rabbitmq.password parameters https://hub.helm.sh/charts/bitnami/rabbitmq
+
+NOTE: if you are running the rabbitMQ image on KinD, you will run into permission issues unless you set ``volumePermissions.enabled=true``
+
+Use the following command if you are using KinD
+
+```cli
+helm install rabbitmq --set auth.username=user --set auth.password=PASSWORD --set volumePermissions.enabled=true bitnami/rabbitmq
+```
+NOTE: For RabbitMQ Helm Chart version 6.x.x or earlier, refer to the earlier note
+
+
 ``` on AKS
 helm repo add azure-marketplace https://marketplace.azurecr.io/helm/v1/repo
-helm install rabbitmq --set rabbitmq.username=user,rabbitmq.password=PASSWORD azure-marketplace/rabbitmq
+helm install rabbitmq --set auth.username=user --set auth.password=PASSWORD --set volumePermissions.enabled=true bitnami/rabbitmq
 ```
 
 ⚠️ Be sure to wait until the deployment has completed before continuing.  
