@@ -25,7 +25,7 @@ cd sample-netcore-keda-rabbitmq
 #### Install RabbitMQ via Helm
 
 ```cli
-helm install --name rabbitmq --set rabbitmq.username=user,rabbitmq.password=PASSWORD stable/rabbitmq
+helm install --name rabbitmq --set auth.username=user --set auth.password=PASSWORD stable/rabbitmq
 ```
 #### Install RabbitMQ via Helm3 (https://bitnami.com/stack/rabbitmq/helm)
 
